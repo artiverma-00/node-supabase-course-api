@@ -1,13 +1,13 @@
-const validateEnrollment=(req, res, next)=> {
-  const { studentName, studentEmail, courseId } = req.body;
+const validateEnrollment = (req, res, next) => {
+  const { student_name, course_id } = req.body;
 
-  if (!studentName || !courseId) {
+  if (!student_name || !course_id) {
     return res.status(400).json({
-      message: "studentName, courseId are required",
+      message: "student_name and course_id are required",
     });
   }
 
   next();
-}
+};
 
 module.exports = validateEnrollment;
