@@ -1,9 +1,9 @@
-function validateEnrollment(req, res, next) {
+const validateEnrollment=(req, res, next)=> {
   const { studentName, studentEmail, courseId } = req.body;
 
-  if (!studentName || !studentEmail || !courseId) {
+  if (!studentName || !courseId) {
     return res.status(400).json({
-      message: "studentName, studentEmail, and courseId are required",
+      message: "studentName, courseId are required",
     });
   }
 
